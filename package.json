@@ -1,0 +1,9 @@
+{
+  "name": "creo-jv-presentation",
+  "version": "1.0.0",
+  "description": "Cranium x EO Joint Venture Investment Proposal",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 8080"
+  }
+}

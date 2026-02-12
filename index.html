@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cranium x EO JV - Investment Proposal</title>
+    <style>
+        .login-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .login-box {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        .login-box h1 {
+            color: #1a3a52;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .login-box p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #c41e3a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-box button:hover {
+            background: #a01830;
+        }
+        .login-box .error {
+            color: #c41e3a;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 120px;
+            height: auto;
+        }
+        .logo-container img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const correctUsername = 'Board';
+            const correctPassword = '#sta@1!9!2!1!';
+            
+            if (username === correctUsername && password === correctPassword) {
+                document.getElementById('loginContainer').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                return false;
+            } else {
+                document.getElementById('errorMsg').textContent = 'Invalid credentials. Please try again.';
+                return false;
+            }
+        }
+        window.addEventListener('load', function() {
+            document.getElementById('loginContainer').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+    </script>
+</head>
+<body>
+<div id="loginContainer" class="login-container">
+    <div class="login-box">
+        <h1>Cranium x EO JV</h1>
+        <p>Investment Proposal</p>
+        <div class="logo-container">
+            <img src="data:image/webp;base64,UklGRpxQAABXRUJQVlA4WAoAAAAwAAAA/wcA3gAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" alt="Oldendorff Logo">
+        </div>
+        <input type="text" id="username" placeholder="Username" onkeypress="if(event.key==='Enter') checkPassword()">
+        <input type="password" id="password" placeholder="Password" onkeypress="if(event.key==='Enter') checkPassword()">
+        <button onclick="checkPassword()">Login</button>
+        <div id="errorMsg" class="error"></div>
+    </div>
+</div>
+</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cranium x EO JV - Investment Proposal</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a1428 0%, #1a2a4a 100%);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .slide {
+            width: 90%;
+            max-width: 1400px;
+            height: 85vh;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header with Oldendorff branding */
+        .slide-header {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: white;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #c41e3a;
+        }
+
+        .header-title {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+
+        .header-logos {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-logos img {
+            height: 35px;
+            object-fit: contain;
+        }
+
+        /* Content area */
+        .slide-content {
+            flex: 1;
+            padding: 35px 45px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 44px;
+            color: #1a3a52;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #1a3a52;
+            margin-bottom: 25px;
+            font-weight: 700;
+            border-bottom: 3px solid #c41e3a;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #2d5a7b;
+            margin: 18px 0 12px 0;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        /* Key metrics display */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 5px solid #c41e3a;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.15);
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c41e3a;
+            margin-bottom: 6px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Key insights box */
+        .insights-box {
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.08) 0%, rgba(26, 58, 82, 0.08) 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #c41e3a;
+            margin: 20px 0;
+        }
+
+        .insights-box h4 {
+            color: #1a3a52;
+            margin-bottom: 12px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .insights-box p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .insights-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0;
+        }
+
+        .insights-box li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .insights-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #c41e3a;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Investment timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, #c41e3a 0%, #1a3a52 100%);
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: white;
+            padding: 15px;
+        }
+
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            background: #c41e3a;
+            border: 4px solid white;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            box-shadow: 0 0 0 3px #1a3a52;
+        }
+
+        .timeline-date {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a3a52;
+            margin-bottom: 4px;
+        }
+
+        .timeline-amount {
+            font-size: 16px;
+            color: #c41e3a;
+            font-weight: 600;
+        }
+
+        /* Chart containers */
+        .chart-container {
+            position: relative;
+            height: 280px;
+            margin: 20px 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 15px 0;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .chart-box {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .chart-box h4 {
+            color: #1a3a52;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* Feature matrix styling */
+        .feature-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+            background: white;
+        }
+
+        .feature-table thead {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: white;
+        }
+
+        .feature-table th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+            border: 1px solid #ddd;
+        }
+
+        .feature-table td {
+            padding: 10px 12px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .feature-table tbody tr:nth-child(odd) {
+            background: #f8f9fa;
+        }
+
+        .feature-table tbody tr:hover {
+            background: #f0f0f0;
+        }
+
+        .priority-high {
+            color: #c41e3a;
+            font-weight: 700;
+        }
+
+        .priority-med {
+            color: #ff9800;
+            font-weight: 700;
+        }
+
+        .priority-low {
+            color: #666;
+            font-weight: 700;
+        }
+
+        .phase-check {
+            text-align: center;
+            color: #c41e3a;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Navigation */
+        .slide-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: #c41e3a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #a01830;
+            transform: scale(1.05);
+        }
+
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #1a3a52;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Value proposition list */
+        .value-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .value-list li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .value-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #c41e3a;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Decision matrix */
+        .decision-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .matrix-box {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 5px solid #1a3a52;
+        }
+
+        .matrix-box.highlight {
+            border-left-color: #c41e3a;
+            background: rgba(196, 30, 58, 0.05);
+        }
+
+        .matrix-box h4 {
+            color: #1a3a52;
+            margin-bottom: 12px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .matrix-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .matrix-box li {
+            padding: 7px 0;
+            padding-left: 22px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .matrix-box li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: #c41e3a;
+            font-weight: 700;
+        }
+
+        /* Closing statement */
+        .closing-statement {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #1a3a52;
+            font-style: italic;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(26, 58, 82, 0.05) 0%, rgba(196, 30, 58, 0.05) 100%);
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #c41e3a;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #c41e3a 0%, #a01830 100%);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            align-self: center;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .metrics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .three-column {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Scrollbar styling */
+        .slide-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .slide-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .slide-content::-webkit-scrollbar-thumb {
+            background: #c41e3a;
+            border-radius: 4px;
+        }
+
+        .slide-content::-webkit-scrollbar-thumb:hover {
+            background: #a01830;
+        }
+
+        /* Tagline styling */
+        .tagline {
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #1a3a52;
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(26, 58, 82, 0.1) 100%);
+            border-radius: 8px;
+            border-left: 5px solid #c41e3a;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Cranium x EO JV</div>
+                    <div class="header-subtitle">Investment Proposal</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <h1 style="margin-bottom: 20px; font-size: 48px;">AI-First Voyage Optimization & Vessel Performance Platform</h1>
+                    <p class="subtitle" style="font-size: 20px; margin-bottom: 40px;">Strategic Joint Venture Investment Proposal</p>
+                    <div style="max-width: 700px;">
+                        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">Establish a strategic JV between EO and Cranium to design, build, operate, and scale an AI-first, integrated voyage, vessel performance, and emissions management platform, purpose-built for EO.</p>
+                        <ul class="value-list" style="text-align: left; display: inline-block;">
+                            <li>Full operational control and transparency</li>
+                            <li>Faster execution and long-term cost advantage</li>
+                            <li>Scalable digital asset with external monetization upside</li>
+                            <li>Accountability embedded in decision logic</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%); padding: 18px 30px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; border-top: 4px solid #c41e3a;">
+                    <div style="text-align: center; padding: 14px 16px; background: rgba(255, 255, 255, 0.12); border-radius: 6px; border-left: 5px solid #c41e3a;">
+                        <div style="font-size: 32px; color: white; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px;">$2M</div>
+                        <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255, 255, 255, 0.9);">Investment</div>
+                    </div>
+                    <div style="text-align: center; padding: 14px 16px; background: rgba(255, 255, 255, 0.12); border-radius: 6px; border-left: 5px solid #c41e3a;">
+                        <div style="font-size: 32px; color: white; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px;">$84M</div>
+                        <div style="font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255, 255, 255, 0.9);">NPV @ 5%<br>(10-Year)</div>
+                    </div>
+                    <div style="text-align: center; padding: 14px 16px; background: rgba(255, 255, 255, 0.12); border-radius: 6px; border-left: 5px solid #c41e3a;">
+                        <div style="font-size: 32px; color: white; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px;">>400%</div>
+                        <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255, 255, 255, 0.9);">IRR</div>
+                    </div>
+                    <div style="text-align: center; padding: 14px 16px; background: rgba(255, 255, 255, 0.12); border-radius: 6px; border-left: 5px solid #c41e3a;">
+                        <div style="font-size: 32px; color: white; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.5px;">1.2 yrs</div>
+                        <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255, 255, 255, 0.9);">Payback</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Proposed Solution -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">The Proposed Solution</div>
+                    <div class="header-subtitle">EO–Cranium JV</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div>
+                        <h3>What This Is</h3>
+                        <p style="margin-bottom: 15px;"><strong>An AI-native, decision-enablement platform</strong></p>
+                        <p style="margin-bottom: 15px;">Built on AI-first technology by:</p>
+                        <ul class="value-list" style="margin-bottom: 20px;">
+                            <li>Ex-Silicon Valley technologists</li>
+                            <li>Ex-seafarers with deep Maritime AI & regulatory experience</li>
+                            <li>Prior experience in creating Voyage Optimization algorithm & full-fledged platform</li>
+                        </ul>
+                        <p style="margin-bottom: 15px;">Designed and configured explicitly around:</p>
+                        <ul class="value-list">
+                            <li>EO's way of operating</li>
+                            <li>Risk appetite and decision philosophy</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>What This Is NOT</h3>
+                        <ul class="value-list" style="margin-bottom: 30px;">
+                            <li>Not outsourcing voyage or operational decisions</li>
+                            <li>Not a generic SaaS platform retro-fitted to EO</li>
+                            <li>Not UI- or dashboard-centric</li>
+                        </ul>
+                        <h3 style="margin-top: 30px;">Core Principle</h3>
+                        <div class="insights-box" style="margin-top: 15px;">
+                            <p style="margin: 0;"><strong>Cranium builds the technology.</strong></p>
+                            <p style="margin: 0;"><strong>EO defines the logic and takes every final decision.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Learnings from Last 4 Years -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Learnings from the Last 4 Years</div>
+                    <div class="header-subtitle">Why the Current Model Falls Short</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="three-column">
+                    <div>
+                        <h3>What EO Has Done</h3>
+                        <p style="margin-bottom: 12px; font-size: 14px; font-weight: 600;">Evaluated multiple third-party platforms:</p>
+                        <ul style="list-style: none; padding-left: 0; font-size: 13px; line-height: 1.6;">
+                            <li>• StormGeo</li>
+                            <li>• WNI</li>
+                            <li>• Sofar Ocean</li>
+                            <li>• Coach Solutions</li>
+                            <li>• ZeroNorth</li>
+                            <li>• i4Insight</li>
+                            <li>• Interroutes</li>
+                            <li>• BOSS (Currently operating)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>What We Learned</h3>
+                        <p style="margin-bottom: 12px; font-size: 14px; font-weight: 600;">Each platform had strengths, but:</p>
+                        <ul class="value-list" style="font-size: 14px;">
+                            <li>Platforms are built generically</li>
+                            <li>Customization is constrained</li>
+                            <li>EO workflows are retro-fitted, not embedded</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Resulting Reality</h3>
+                        <ul class="value-list" style="font-size: 14px;">
+                            <li>Manual overrides become routine</li>
+                            <li>"Grey-box" decisions emerge</li>
+                            <li>Trust, compliance, and accountability erode over time</li>
+                        </ul>
+                        <div class="insights-box" style="margin-top: 15px; padding: 12px;">
+                            <p style="margin: 0; font-size: 13px; font-style: italic;">This is a <strong>structural limitation</strong> — not a vendor execution failure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Why Voyage Optimization Fails -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Why "Voyage Optimization" Fails Without EO DNA</div>
+                    <div class="header-subtitle">The Core Problem</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div style="display: flex; gap: 40px; align-items: center; height: 100%;">
+                    <div style="flex: 1;">
+                        <h3 style="margin-top: 0;">Algorithms Alone Cannot Understand</h3>
+                        <ul class="value-list" style="font-size: 16px; margin-top: 25px;">
+                            <li>EO's nautical philosophy</li>
+                            <li>Operational realities</li>
+                            <li>Commercial context</li>
+                        </ul>
+                    </div>
+                    <div style="flex: 1; background: linear-gradient(135deg, rgba(196, 30, 58, 0.15) 0%, rgba(26, 58, 82, 0.15) 100%); padding: 40px; border-radius: 12px; border-left: 6px solid #c41e3a; text-align: center;">
+                        <p style="font-size: 18px; font-weight: 700; color: #1a3a52; margin-bottom: 20px;">The Critical Insight</p>
+                        <p style="font-size: 16px; line-height: 1.8; color: #1a3a52; font-style: italic;">EO DNA must be embedded in the logic — <strong>not layered on top.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Executive Summary - Financial Highlights -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Executive Summary</div>
+                    <div class="header-subtitle">Financial Investment Case</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div>
+                    <h2>Key Financial Metrics</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">$84M</div>
+                            <div class="metric-label">NPV @ 5%<br>(10-Year Basis)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$35M</div>
+                            <div class="metric-label">NPV @ 5%<br>(5-Year Basis)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">>400%</div>
+                            <div class="metric-label">IRR</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">1.2 yrs</div>
+                            <div class="metric-label">Payback Period</div>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 25px;">NPV Sensitivity Analysis</h3>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 12px;">NPV Sensitivity Table - Basis: Additional % Voyage Cost Savings (0.1% / 0.2% / 0.3% / 0.4%)</p>
+                    <table class="feature-table" style="font-size: 12px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 50%;">Metric</th>
+                                <th style="width: 12.5%;">0.10%</th>
+                                <th style="width: 12.5%;">0.20%</th>
+                                <th style="width: 12.5%;">0.30%</th>
+                                <th style="width: 12.5%;">0.40%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>NPV @5% (10 years)</strong></td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$54.4M</td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$84.0M</td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$113.6M</td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$143.3M</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IRR (5 years)</strong></td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">223%</td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">483%</td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">688%</td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">907%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NPV @5% (5 years)</strong></td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$21.9M</td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$35.6M</td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$49.3M</td>
+                                <td style="text-align: center; color: #c41e3a; font-weight: 700;">$62.9M</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IRR (5 years)</strong></td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">289%</td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">482%</td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">687%</td>
+                                <td style="text-align: center; color: #1a3a52; font-weight: 700;">907%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Investment Structure</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">April 2026</div>
+                            <div class="timeline-amount">$1.2M</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">January 2027</div>
+                            <div class="timeline-amount">$0.8M</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="insights-box">
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li><strong>JV turns positive in 2028</strong> with strong profitability trajectory</li>
+                        <li><strong>Operations based out of India (Tier-I cities/IT hubs) to access a scalable, high-calibre talent ecosystem across seafaring, operations, and technology functions</strong></li>
+                        <li><strong>Expenses considered on the higher side with built-in flexibility</strong> for operational adjustments</li>
+                        <li><strong>Incremental savings</strong> driven by direct mariner involvement, improving routing decisions, compliance adherence, and ship–shore communication, with enhanced operational satisfaction across EO Ops and vessels, conservatively estimated at 0.2%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Execution Model & Timeline -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Execution Model & Timeline</div>
+                    <div class="header-subtitle">KPI-Gated Development</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div>
+                        <h3>Cranium Responsibilities</h3>
+                        <ul class="value-list">
+                            <li>Full tech stack development</li>
+                            <li>AI agents and data fabric</li>
+                            <li>Platform development and upkeep</li>
+                            <li>Target uptime: 99.5%</li>
+                            <li>Critical failure recovery: Max 6 hours</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>EO Responsibilities</h3>
+                        <ul class="value-list">
+                            <li>Operational inputs and validation</li>
+                            <li>Decision logic definition</li>
+                            <li>Live testing and acceptance</li>
+                            <li>Final decision authority on all voyage matters</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 style="margin-top: 25px;">Development Timeline</h3>
+                <div style="background: #f8f9fa; padding: 18px; border-radius: 8px; border-left: 5px solid #c41e3a; margin-top: 15px;">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; font-size: 14px;">
+                        <div><strong>Month 0:</strong> JV Signing & Scope Freeze</div>
+                        <div><strong>Month 6:</strong> MVP Delivered</div>
+                        <div><strong>Months 6-12:</strong> Live Operational Validation</div>
+                        <div><strong>Month ~12:</strong> Binary Go/No-Go Decision</div>
+                    </div>
+                </div>
+                <div class="two-column" style="margin-top: 20px;">
+                    <div class="matrix-box">
+                        <h4>Data Access</h4>
+                        <p style="font-size: 14px; margin: 0;">Cranium granted access to last 3 years of EO historical data, used solely for development, testing, and validation.</p>
+                    </div>
+                    <div class="matrix-box">
+                        <h4>Platform Philosophy</h4>
+                        <p style="font-size: 14px; margin: 0;"><strong>Agents operating inside workflows.</strong> Decisions delivered where work happens (not humans logging into tools).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Feature Roadmap -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Feature Roadmap</div>
+                    <div class="header-subtitle">Strategic Capabilities by Phase</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <table class="feature-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 45%;">Feature / Target Timeline</th>
+                            <th style="width: 12%;">Priority</th>
+                            <th style="width: 12%;">2026-H2</th>
+                            <th style="width: 12%;">2027-H1</th>
+                            <th style="width: 12%;">2027-H2</th>
+                            <th style="width: 12%;">2028-H1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Optimization Algorithm (MVC, MBC, EETA, JIT, CP etc)</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Option to view basic details across selected priorities</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Nautical Chart Layer with NAV warnings</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Multiple weather layer - ECMWF+Spire+NOAA+Deepmind</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Sea Margin Module - based on last 5 years data</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>UI - Ops</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>UI-Ships</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>UI-Routeing Team</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Reporting Forms</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Emissions Module - CII/EU-ETS/Fuel-EU/UK_ETS/IMO Net Zero</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Hull Fouling Module</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SnC Module (EO Format)</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vessel Performance / Trend Analysis - Deep dive</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Ingestion of HD data for modelling & Comparisons</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>VESON Push & Pull</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vessel Onboarding form & Validation Engine</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Heavy Weather Routing Simulator - Routeing Team</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Voyage Plan generation</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pre-Fix vsl evaluator</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CP claims simulator</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>End of Voy Report - EO Format</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Initial Voy Comparison report - EO Format</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Vessel Info Sheet Module & Placeholder for docs</td>
+                            <td><span class="priority-high">High</span></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>AI assisted Training material</td>
+                            <td><span class="priority-med">Med</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>AI Chatbots / Co-pilot for ops</td>
+                            <td><span class="priority-med">Med</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Future fuel readiness</td>
+                            <td><span class="priority-med">Med</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Full Voy Simulator for Ops</td>
+                            <td><span class="priority-med">Med</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fleet AI</td>
+                            <td><span class="priority-med">Med</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>API connections (on demand)</td>
+                            <td><span class="priority-med">Med</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Reading data from Images / Videos - Flowmeters / wx etc</td>
+                            <td><span class="priority-low">Low</span></td>
+                            <td></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Option to customize UI, Logic & reports for Major customers</td>
+                            <td><span class="priority-low">Low</span></td>
+                            <td></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Grading system for Vsls</td>
+                            <td><span class="priority-low">Low</span></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>WASP - Optimization</td>
+                            <td><span class="priority-low">Low</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="phase-check">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 8: Financial Projections -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Financial Projections</div>
+                    <div class="header-subtitle">10-Year NPV Analysis</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div class="chart-box">
+                        <h4>Total Revenue & Expenses</h4>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="revenueExpensesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <h4>Net Profit - JV</h4>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="netProfitChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="two-column">
+                    <div class="chart-box">
+                        <h4>Value Creation Sources</h4>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="savingsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <h4>Cumulative Net Cashflow</h4>
+                        <div class="chart-container" style="height: 250px;">
+                            <canvas id="cashflowChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Ship Count by Month -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Platform Growth</div>
+                    <div class="header-subtitle">Ships on Platform by Month & Year</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="shipCountChart"></canvas>
+                </div>
+                <div class="metrics-grid" style="grid-template-columns: 1fr 1fr; margin-top: 20px; margin-bottom: 20px;">
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 24px;">$350</div>
+                        <div class="metric-label">Subscription Fee for EO Ships<br>(per Ship/Month)<br><span style="font-size: 11px; color: #999;">(from current $600/ship/month)</span></div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" style="font-size: 24px;">$600</div>
+                        <div class="metric-label">Subscription Fee for Non-EO Ships<br>(per Ship/Month)</div>
+                    </div>
+                </div>
+                <h3 style="margin-top: 20px; margin-bottom: 12px;">Annual Expense Breakdown by Category</h3>
+                <div class="chart-container" style="height: 280px;">
+                    <canvas id="expenseChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Governance & Control -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Governance & Control Structure</div>
+                    <div class="header-subtitle">Decision Rights & Accountability</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div>
+                        <h3>EO Control Points</h3>
+                        <ul class="value-list">
+                            <li>Majority board position</li>
+                            <li>Board Chair role</li>
+                            <li>Veto over budgets & capex</li>
+                            <li>Veto over senior hires</li>
+                            <li>Veto over external commercialization</li>
+                            <li>Veto over IP matters</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Decision Authority</h3>
+                        <div class="matrix-box">
+                            <h4 style="margin-top: 0;">EO Decides</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 6px 0; font-size: 14px;">✓ Voyage risk thresholds</li>
+                                <li style="padding: 6px 0; font-size: 14px;">✓ Safety vs. cost trade-offs</li>
+                                <li style="padding: 6px 0; font-size: 14px;">✓ Weather & power limits</li>
+                                <li style="padding: 6px 0; font-size: 14px;">✓ CP & compliance logic</li>
+                                <li style="padding: 6px 0; font-size: 14px;">✓ Final voyage decisions</li>
+                            </ul>
+                        </div>
+                        <div class="matrix-box" style="margin-top: 15px;">
+                            <h4 style="margin-top: 0;">Cranium Builds</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 6px 0; font-size: 14px;">✓ Technology & data fabric</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="insights-box" style="margin-top: 20px;">
+                    <h4>Principle</h4>
+                    <p style="margin: 0; font-size: 14px;">Accountability sits where risk sits. EO judgment becomes traceable, auditable, and scalable.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Equity & Incentive Alignment -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Equity Structure & Alignment</div>
+                    <div class="header-subtitle">Incentives for Success</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div class="matrix-box">
+                        <h4>Initial Ownership Structure</h4>
+                        <div style="margin: 20px 0; text-align: center;">
+                            <p style="font-size: 28px; color: #c41e3a; font-weight: 700; margin: 10px 0;">72% EO</p>
+                            <p style="font-size: 28px; color: #1a3a52; font-weight: 700; margin: 10px 0;">28% Cranium</p>
+                        </div>
+                    </div>
+                    <div class="matrix-box highlight">
+                        <h4>Step-Down to 60/40 Subject To</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 8px 0; font-size: 14px;">✓ Delivery against defined KPIs</li>
+                            <li style="padding: 8px 0; font-size: 14px;">✓ Platform proving operational relevance at EO scale</li>
+                            <li style="padding: 8px 0; font-size: 14px;">✓ Demonstrated sustainability and profitability</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="two-column" style="margin-top: 20px;">
+                    <div class="matrix-box">
+                        <h4>ESOPs (Employee Stock Options)</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 6px 0; font-size: 14px;">✓ Progressive vesting as company becomes profitable</li>
+                            <li style="padding: 6px 0; font-size: 14px;">✓ Tied to sustainability and responsible scaling</li>
+                            <li style="padding: 6px 0; font-size: 14px;">✓ Aligns team incentives with long-term value</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-box">
+                        <h4>Commercial Model</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 6px 0; font-size: 14px;">✓ EO is the anchor customer</li>
+                            <li style="padding: 6px 0; font-size: 14px;">✓ Cranium responsible for external sales at appropriate stage</li>
+                            <li style="padding: 6px 0; font-size: 14px;">✓ Cranium wins only if EO wins first</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Service Model & Cost Discipline -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Service Model & Cost Discipline</div>
+                    <div class="header-subtitle">EO-Specific Operational Framework</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div>
+                        <h3>Enhanced Service for EO Ships</h3>
+                        <p style="margin-bottom: 15px; font-size: 14px;">EO vessels receive <strong>2× operational resources</strong> compared to market vessels:</p>
+                        <ul class="value-list" style="font-size: 14px;">
+                            <li>Higher routing review frequency</li>
+                            <li>Increased human oversight</li>
+                            <li>Faster escalation and response</li>
+                            <li>Dedicated support team</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Operating Expense Cap</h3>
+                        <div style="background: #f8f9fa; padding: 18px; border-radius: 8px; border-left: 5px solid #c41e3a;">
+                            <p style="font-size: 13px; color: #c41e3a; font-weight: 700; margin-bottom: 10px;">Effective 1 January 2028</p>
+                            <p style="font-size: 14px; margin-bottom: 10px;"><strong>JV operating expenses</strong> attributable to EO vessels capped at:</p>
+                            <p style="font-size: 24px; color: #1a3a52; font-weight: 700; margin: 12px 0;">$100/vessel/month</p>
+                            <p style="font-size: 12px; color: #666;">Any expenditure beyond this borne directly by EO and excluded from JV operating costs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="insights-box" style="margin-top: 20px;">
+                    <h4>Why This Matters</h4>
+                    <ul style="margin: 0;">
+                        <li style="font-size: 14px;">Flexibility during build phase (2026-27)</li>
+                        <li style="font-size: 14px;">Enforces scalable cost discipline from 2028</li>
+                        <li style="font-size: 14px;">Prevents cross-subsidization</li>
+                        <li style="font-size: 14px;">Keeps JV unit economics clean</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Risk & Mitigation -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title">Risk Assessment & Mitigation</div>
+                    <div class="header-subtitle">Downside Protection & Upside Capture</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div class="matrix-box">
+                        <h4>Key Risks</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 7px 0; font-size: 14px;">• Technology execution delays</li>
+                            <li style="padding: 7px 0; font-size: 14px;">• Integration complexity with existing systems</li>
+                            <li style="padding: 7px 0; font-size: 14px;">• External commercialization challenges</li>
+                        </ul>
+                    </div>
+                    <div class="matrix-box highlight">
+                        <h4>Mitigation Strategies</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="padding: 7px 0; font-size: 14px;">✓ KPI-gated development with binary Go/No-Go at 12 months</li>
+                            <li style="padding: 7px 0; font-size: 14px;">✓ EO majority control and veto rights</li>
+                            <li style="padding: 7px 0; font-size: 14px;">✓ Defined scope and milestones</li>
+                            <li style="padding: 7px 0; font-size: 14px;">✓ No open-ended commitment</li>
+                            <li style="padding: 7px 0; font-size: 14px;">✓ Experienced team with maritime AI expertise</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="insights-box" style="margin-top: 20px;">
+                    <h4>Investment Characteristics</h4>
+                    <ul style="margin: 0;">
+                        <li style="font-size: 14px;"><strong>Downside:</strong> Capped at ~$2M investment (with operational learnings retained)</li>
+                        <li style="font-size: 14px;"><strong>Upside:</strong> Asymmetric with $84M NPV potential over 10 years</li>
+                        <li style="font-size: 14px;"><strong>Real Option:</strong> Strong real-option characteristics with defined decision points</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Board Decision -->
+        <div class="slide">
+            <div class="slide-header">
+                <div>
+                    <div class="header-title" style="font-size: 20px;">A Controlled Investment to Own Accountability and Unlock Long-Term Value</div>
+                </div>
+                <div class="header-logos">
+                    <img src="oldendorff-logo.png" alt="Oldendorff">
+                </div>
+            </div>
+            <div class="slide-content">
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="tagline">
+                        <p style="margin: 0 0 15px 0; font-size: 16px; line-height: 1.8;">For an investment of <strong>~USD 2 million</strong>, EO secures control over a core operational capability, removes a structural accountability gap that no vendor model can fix, and creates a digital asset with an expected <strong>NPV of ~USD 84 million</strong> at a 5% discount rate over 10 years / <strong>NPV of ~USD 35 million</strong> at a 5% discount rate over 5 years.</p>
+                        <p style="margin: 0; font-size: 16px; line-height: 1.8;"><strong>This is not a technology bet — it is a control, accountability, and value-creation decision.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="slide-nav">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">14</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+
+            // Initialize charts when slide becomes active
+            if (currentSlide === 7) {
+                setTimeout(() => {
+                    initRevenueExpensesChart();
+                    initNetProfitChart();
+                    initSavingsChart();
+                    initCashflowChart();
+                }, 100);
+            }
+            if (currentSlide === 8) {
+                setTimeout(() => {
+                    initShipCountChart();
+                    initExpenseChart();
+                }, 100);
+            }
+        }
+
+        function changeSlide(n) {
+            showSlide(currentSlide + n);
+        }
+
+        // Financial data from Excel
+        const years = ['2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035'];
+        
+        // Row 17: Net Profit - Cranium
+        const netProfit = [-842088.16, -1090479.41, 454935.47, 2376206.84, 4019807.49, 4019807.49, 4019807.49, 4019807.49, 4019807.49, 4019807.49];
+        
+        // Row 23: Virtual Revenue from Subscription fee reduction
+        const subscriptionSavings = [18750, 1075000, 2317500, 2387025, 2458635.75, 2458635.75, 2458635.75, 2458635.75, 2458635.75, 2458635.75];
+        
+        // Row 24: Incremental Savings @ 0.1% additional
+        const additionalSavings = [117562.5, 6740250, 14107500, 14107500, 14107500, 14107500, 14107500, 14107500, 14107500, 14107500];
+        
+        // Row 30: Cumulative Net Cashflow (corrected data)
+        const cumulativeCashflow = [-1070179, 632757, 14424327, 14743033, 14869775, 14161691, 13487325, 12845071, 12233401, 11650858];
+
+        // Estimated Revenue and Expenses
+        const totalRevenue = [26250, 1505000, 4171500, 6779151, 9146124.99, 9146124.99, 9146124.99, 9146124.99, 9146124.99, 9146124.99];
+        const totalExpenses = [868338.16, 2595479.41, 3716564.53, 4402944.16, 5126317.50, 5126317.50, 5126317.50, 5126317.50, 5126317.50, 5126317.50];
+
+        // Ship count data
+        const shipMonths = ['2026-Dec', '2027-Jan', '2027-Feb', '2027-Mar', '2027-Apr', '2027-May', '2027-Jun', '2027-Jul', '2027-Aug', '2027-Sep', '2027-Oct', '2027-Nov', '2027-Dec', '2028-Jan', '2028-Feb', '2028-Mar', '2028-Apr', '2028-May', '2028-Jun', '2028-Jul', '2028-Aug', '2028-Sep', '2028-Oct', '2028-Nov', '2028-Dec', '2029-Jan', '2029-Feb', '2029-Mar', '2029-Apr', '2029-May', '2029-Jun', '2029-Jul', '2029-Aug', '2029-Sep', '2029-Oct', '2029-Nov', '2029-Dec', '2030-Jan', '2030-Feb', '2030-Mar', '2030-Apr', '2030-May', '2030-Jun', '2030-Jul', '2030-Aug', '2030-Sep', '2030-Oct', '2030-Nov', '2030-Dec'];
+        const ownShips = [25, 25, 25, 50, 100, 150, 200, 250, 300, 350, 400, 500, 600, 700, 700, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750];
+        const marketShips = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 100, 100, 100, 150, 150, 150, 200, 200, 200, 300, 300, 300, 400, 400, 400, 500, 500, 500, 600, 600, 600, 700, 700, 700, 700, 700, 700, 750, 750, 750, 750];
+
+        let revenueExpensesChart, netProfitChart, savingsChart, cashflowChart, shipCountChart, expenseChart;
+
+        // Expense data by month (Tech vs Ops)
+        // Annual expense breakdown by category
+        const expenseYears = ['2026', '2027', '2028', '2029', '2030'];
+        const techExpenses = [624998, 1487500, 1770625, 2108219, 2510852];
+        const opsExpenses = [243340, 957979, 1545940, 1794725, 2115466];
+        const salesExpenses = [0, 150000, 400000, 500000, 500000];
+        
+        // Monthly data (kept for reference, not used in yearly chart)
+        const expenseMonths = ['2026-Jul', '2026-Aug', '2026-Sep', '2026-Oct', '2026-Nov', '2026-Dec', '2027-Jan', '2027-Feb', '2027-Mar', '2027-Apr', '2027-May', '2027-Jun', '2027-Jul', '2027-Aug', '2027-Sep', '2027-Oct', '2027-Nov', '2027-Dec', '2028-Jan', '2028-Feb', '2028-Mar', '2028-Apr', '2028-May', '2028-Jun', '2028-Jul', '2028-Aug', '2028-Sep', '2028-Oct', '2028-Nov', '2028-Dec', '2029-Jan', '2029-Feb', '2029-Mar', '2029-Apr', '2029-May', '2029-Jun', '2029-Jul', '2029-Aug', '2029-Sep', '2029-Oct', '2029-Nov', '2029-Dec', '2030-Jan', '2030-Feb', '2030-Mar', '2030-Apr', '2030-May', '2030-Jun', '2030-Jul', '2030-Aug', '2030-Sep', '2030-Oct', '2030-Nov', '2030-Dec'];
+        const monthlyTechExpenses = [104166, 104166, 104166, 104166, 104166, 104166, 123958, 123958, 123958, 123958, 123958, 123958, 148958, 148958, 148958, 148958, 148958, 148958, 180885, 180885, 180885, 180885, 180885, 180885, 217352, 217352, 217352, 217352, 217352, 217352, 250904, 250904, 250904, 250904, 250904, 250904];
+        const monthlyOpsExpenses = [49918, 29918, 29918, 44529, 44529, 44529, 82506, 62506, 62506, 65812, 71299, 71299, 107009, 87009, 87009, 87009, 87009, 87009, 145495, 125495, 125495, 125495, 125495, 125495, 174560, 144560, 144560, 144560, 144560, 144560, 201289, 171289, 171289, 171289, 171289, 171289];
+
+        function initRevenueExpensesChart() {
+            const ctx = document.getElementById('revenueExpensesChart');
+            if (!ctx) return;
+            if (revenueExpensesChart) revenueExpensesChart.destroy();
+
+            revenueExpensesChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Total Revenue',
+                            data: totalRevenue,
+                            backgroundColor: 'rgba(196, 30, 58, 0.85)',
+                            borderColor: '#c41e3a',
+                            borderWidth: 2,
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Total Expenses',
+                            data: totalExpenses,
+                            backgroundColor: 'rgba(26, 58, 82, 0.85)',
+                            borderColor: '#1a3a52',
+                            borderWidth: 2,
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { font: { size: 12, weight: 'bold' }, padding: 15 } },
+                        filler: { propagate: true }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' },
+                                callback: function(value) {
+                                    return '$' + (value / 1000000).toFixed(1) + 'M';
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 11, weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initNetProfitChart() {
+            const ctx = document.getElementById('netProfitChart');
+            if (!ctx) return;
+            if (netProfitChart) netProfitChart.destroy();
+
+            netProfitChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Net Profit - JV',
+                        data: netProfit,
+                        borderColor: '#c41e3a',
+                        backgroundColor: 'rgba(196, 30, 58, 0.15)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#c41e3a',
+                        pointBorderColor: 'white',
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { font: { size: 12, weight: 'bold' }, padding: 15 } }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' },
+                                callback: function(value) {
+                                    return '$' + (value / 1000000).toFixed(1) + 'M';
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 11, weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initSavingsChart() {
+            const ctx = document.getElementById('savingsChart');
+            if (!ctx) return;
+            if (savingsChart) savingsChart.destroy();
+
+            savingsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Subscription Fee Reduction',
+                            data: subscriptionSavings,
+                            backgroundColor: 'rgba(196, 30, 58, 0.85)',
+                            borderColor: '#c41e3a',
+                            borderWidth: 2,
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Additional Savings @ 0.2%',
+                            data: additionalSavings,
+                            backgroundColor: 'rgba(255, 152, 0, 0.85)',
+                            borderColor: '#ff9800',
+                            borderWidth: 2,
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { font: { size: 12, weight: 'bold' }, padding: 15 } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' },
+                                callback: function(value) {
+                                    return '$' + (value / 1000000).toFixed(1) + 'M';
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 11, weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initCashflowChart() {
+            const ctx = document.getElementById('cashflowChart');
+            if (!ctx) return;
+            if (cashflowChart) cashflowChart.destroy();
+
+            cashflowChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Cumulative Net Cashflow',
+                        data: cumulativeCashflow,
+                        borderColor: '#1a3a52',
+                        backgroundColor: 'rgba(26, 58, 82, 0.15)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: '#1a3a52',
+                        pointBorderColor: 'white',
+                        pointBorderWidth: 2,
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { font: { size: 12, weight: 'bold' }, padding: 15 } }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' },
+                                callback: function(value) {
+                                    return '$' + (value / 1000000).toFixed(1) + 'M';
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 11, weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initShipCountChart() {
+            const ctx = document.getElementById('shipCountChart');
+            if (!ctx) return;
+            if (shipCountChart) shipCountChart.destroy();
+
+            shipCountChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: shipMonths,
+                    datasets: [
+                        {
+                            label: 'Own Ships',
+                            data: ownShips,
+                            backgroundColor: 'rgba(196, 30, 58, 0.85)',
+                            borderColor: '#c41e3a',
+                            borderWidth: 2,
+                            borderRadius: 3
+                        },
+                        {
+                            label: 'Market Ships',
+                            data: marketShips,
+                            backgroundColor: 'rgba(26, 58, 82, 0.85)',
+                            borderColor: '#1a3a52',
+                            borderWidth: 2,
+                            borderRadius: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { font: { size: 12, weight: 'bold' }, padding: 15 } }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45,
+                                font: { size: 10, weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' },
+                                callback: function(value) {
+                                    return value + ' ships';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function initExpenseChart() {
+            const ctx = document.getElementById('expenseChart');
+            if (!ctx) return;
+            if (expenseChart) expenseChart.destroy();
+
+            expenseChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: expenseYears,
+                    datasets: [
+                        {
+                            label: 'Tech Expenses',
+                            data: techExpenses,
+                            backgroundColor: 'rgba(196, 30, 58, 0.85)',
+                            borderColor: '#c41e3a',
+                            borderWidth: 2,
+                            borderRadius: 3
+                        },
+                        {
+                            label: 'Operational Expenses',
+                            data: opsExpenses,
+                            backgroundColor: 'rgba(26, 58, 82, 0.85)',
+                            borderColor: '#1a3a52',
+                            borderWidth: 2,
+                            borderRadius: 3
+                        },
+                        {
+                            label: 'Sales Expenses',
+                            data: salesExpenses,
+                            backgroundColor: 'rgba(255, 152, 0, 0.85)',
+                            borderColor: '#ff9800',
+                            borderWidth: 2,
+                            borderRadius: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { font: { size: 12, weight: 'bold' }, padding: 15 } }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(0, 0, 0, 0.05)' },
+                            ticks: {
+                                font: { size: 11, weight: 'bold' },
+                                callback: function(value) {
+                                    return '$' + (value / 1000).toFixed(0) + 'K';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize
+        showSlide(0);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+    </script>
+</body>
+</html>
