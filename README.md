@@ -31,8 +31,7 @@ npm run dev
 
 ## Login Credentials
 
-- **Username:** Board
-- **Password:** #sta@1!9!2!1!
+
 
 ## Navigation
 
