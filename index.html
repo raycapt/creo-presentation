@@ -82,26 +82,36 @@
         }
     </style>
     <script>
-        function checkPassword() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const correctUsername = 'Board';
-            const correctPassword = '#sta@1!9!2!1!';
-            
-            if (username === correctUsername && password === correctPassword) {
-                document.getElementById('loginContainer').classList.add('hidden');
-                document.body.style.overflow = 'auto';
-                return false;
-            } else {
-                document.getElementById('errorMsg').textContent = 'Invalid credentials. Please try again.';
-                return false;
-            }
-        }
-        window.addEventListener('load', function() {
-            document.getElementById('loginContainer').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
-    </script>
+  function checkPassword() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    const allowedLogins = [
+      { username: 'Board',  password: '#sta@1!9!2!1!' },
+      { username: 'PD_EO',  password: '#Pd@1!9!2!1!' }
+    ];
+
+    const isValid = allowedLogins.some(
+      (u) => u.username === username && u.password === password
+    );
+
+    if (isValid) {
+      document.getElementById('loginContainer').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+      document.getElementById('errorMsg').textContent = '';
+      return false;
+    } else {
+      document.getElementById('errorMsg').textContent =
+        'Invalid credentials. Please try again.';
+      return false;
+    }
+  }
+
+  window.addEventListener('load', function () {
+    document.getElementById('loginContainer').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+</script>
 </head>
 <body>
 <div id="loginContainer" class="login-container">
